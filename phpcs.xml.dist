@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset>
+    <arg name="basepath" value="." />
+    <arg name="extensions" value="php" />
+    <arg name="parallel" value="80" />
+    <arg name="colors" />
+    <arg name="cache" value=".phpcs.cache" />
+    <arg value="p" />
+
+    <file>src</file>
+    <file>test</file>
+
+    <rule ref="Doctrine">
+        <exclude name="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment.MultiLinePropertyComment" />
+
+        <!-- temporarily disabling this one -->
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+            <property name="newlinesCountAfterDeclare" value="2"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
+        <properties>
+            <property name="spacesCountBeforeColon" value="0"/>
+        </properties>
+    </rule>
+</ruleset>
+
